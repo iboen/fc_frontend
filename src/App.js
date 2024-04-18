@@ -36,7 +36,7 @@ return (
         {isLoading ? 'Loading...' : 'Fetch Image'}
       </button>
       {error && <div className="error-message">{error}</div>}
-      {imageUrl && !isLoading && <img className="fetched-image" src={imageUrl} alt="Fetched Image" />}
+      {imageUrl && !isLoading && <img className="fetched-image" src={imageUrl} alt="" />}
     </div>
   );
 };
