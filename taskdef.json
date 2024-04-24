@@ -54,6 +54,5 @@
         "operatingSystemFamily": "LINUX"
     },
     "registeredAt": "2024-04-24T10:42:16.764Z",
-    "registeredBy": "arn:aws:iam::675327529402:user/ibnu",
-    "tags": []
+    "registeredBy": "arn:aws:iam::675327529402:user/ibnu"
 }
