@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-3:675327529402:task-definition/my-ecs-frontend-td:1",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-3:675327529402:task-definition/my-ecs-frontend-td:3",
     "containerDefinitions": [
         {
             "name": "fc_frontend",
@@ -20,18 +20,33 @@
             "mountPoints": [],
             "volumesFrom": [],
             "ulimits": [],
+            "healthCheck": {
+                "command": [
+                    "CMD-SHELL",
+                    "curl -f http://localhost/ || exit 1"
+                ],
+                "interval": 5,
+                "timeout": 5,
+                "retries": 3
+            },
             "systemControls": []
         }
     ],
     "family": "my-ecs-frontend-td",
     "executionRoleArn": "arn:aws:iam::675327529402:role/ecsTaskExecutionRole",
     "networkMode": "bridge",
-    "revision": 1,
+    "revision": 3,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
         {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.24"
+        },
+        {
             "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "ecs.capability.container-health-check"
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
@@ -53,6 +68,6 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-04-24T10:42:16.764Z",
+    "registeredAt": "2024-04-24T23:26:30.230Z",
     "registeredBy": "arn:aws:iam::675327529402:user/ibnu"
 }
